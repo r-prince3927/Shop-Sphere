@@ -169,10 +169,59 @@ RAZORPAY_KEY_SECRET=
 - Unit & Integration Testing
 
 ---
+# Screenshots
 
-## Screenshots
+## Home
 
-Project screenshots will be added soon.
+![Home](Screenshots/home.png)
+
+---
+
+## Products
+
+![Products](Screenshots/products.png)
+
+---
+
+## Product Details
+
+![Product Details](Screenshots/product-details.png)
+
+---
+
+## Wishlist
+
+![Wishlist](Screenshots/wishlist.png)
+
+---
+
+## Cart
+
+![Cart](Screenshots/cart.png)
+
+---
+
+## Checkout
+
+![Checkout](Screenshots/checkout.png)
+
+---
+
+## Admin Dashboard
+
+![Admin Dashboard](Screenshots/admin-dashboard.png)
+
+---
+
+## Admin Products
+
+![Admin Products](Screenshots/admin-products.png)
+
+---
+
+## Admin Users
+
+![Admin Users](Screenshots/admin-users.png)
 
 ---
 
