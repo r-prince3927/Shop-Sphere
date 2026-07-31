@@ -1,10 +1,40 @@
 from django.urls import path
-from .views import CheckoutAPIView , OrderHistoryAPIView , OrderDetailAPIView , MarkOrderPaidAPIView , VerifyPaymentAPIView
+
+from .views import (
+    CheckoutSummaryAPIView,
+    CreatePaymentAPIView,
+    VerifyPaymentAPIView,
+    OrderHistoryAPIView,
+    OrderDetailAPIView,
+)
+
+from .admin_views import (
+    AdminOrderListAPIView,
+    AdminOrderUpdateAPIView,
+)
+
 urlpatterns = [
+
+    # ==========================
+    # USER APIs
+    # ==========================
+
     path(
         "checkout/",
-        CheckoutAPIView.as_view(),
-        name="checkout",
+        CheckoutSummaryAPIView.as_view(),
+        name="checkout-summary",
+    ),
+
+    path(
+        "payment/create/",
+        CreatePaymentAPIView.as_view(),
+        name="create-payment",
+    ),
+
+    path(
+        "payment/verify/",
+        VerifyPaymentAPIView.as_view(),
+        name="verify-payment",
     ),
 
     path(
@@ -19,17 +49,19 @@ urlpatterns = [
         name="order-detail",
     ),
 
+    # ==========================
+    # ADMIN APIs
+    # ==========================
+
     path(
-    "<int:pk>/pay/",
-    MarkOrderPaidAPIView.as_view(),
-    name="mark-order-paid",
+        "admin/all/",
+        AdminOrderListAPIView.as_view(),
+        name="admin-orders",
     ),
 
     path(
-    "<int:pk>/verify-payment/",
-    VerifyPaymentAPIView.as_view(),
-    name="verify-payment",
+        "admin/<int:pk>/",
+        AdminOrderUpdateAPIView.as_view(),
+        name="admin-update-order",
     ),
-    
-
 ]

@@ -1,12 +1,13 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import UserSerializer
-from django.contrib.auth import authenticate
-from rest_framework_simplejwt.tokens import RefreshToken
-from .serializers import LoginSerializer
-from django.contrib.auth import authenticate
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.tokens import RefreshToken
+
+from django.contrib.auth import authenticate
+
+from .serializers import UserSerializer, LoginSerializer
+
 
 class RegisterAPIView(APIView):
 
@@ -38,12 +39,20 @@ class LoginAPIView(APIView):
             email = serializer.validated_data["email"]
             password = serializer.validated_data["password"]
 
+            print("=" * 50)
+            print("EMAIL:", email)
+            print("PASSWORD:", password)
+            print("=" * 50)
+
             user = authenticate(
                 username=email,
                 password=password
             )
 
+            print("AUTHENTICATED USER:", user)
+
             if user is None:
+
                 return Response(
                     {
                         "error": "Invalid email or password"
@@ -53,20 +62,14 @@ class LoginAPIView(APIView):
 
             refresh = RefreshToken.for_user(user)
 
-            access_token = refresh.access_token
-
             return Response(
                 {
                     "refresh": str(refresh),
-                    "access": str(access_token),
-                },
-                status=status.HTTP_200_OK
+                    "access": str(refresh.access_token),
+                }
             )
 
-        return Response(
-            serializer.errors,
-            status=status.HTTP_400_BAD_REQUEST
-        )
+        return Response(serializer.errors, status=400)
 class ProfileAPIView(APIView):
 
     permission_classes = [IsAuthenticated]
@@ -75,4 +78,29 @@ class ProfileAPIView(APIView):
 
         serializer = UserSerializer(request.user)
 
-        return Response(serializer.data)    
+        return Response(serializer.data)
+
+    def patch(self, request):
+
+        print("=" * 50)
+        print("REQUEST DATA :", request.data)
+        print("=" * 50)
+
+        serializer = UserSerializer(
+            request.user,
+            data=request.data,
+            partial=True
+        )
+
+        if serializer.is_valid():
+
+            serializer.save()
+
+            return Response(serializer.data)
+
+        print(serializer.errors)
+
+        return Response(
+            serializer.errors,
+            status=status.HTTP_400_BAD_REQUEST
+        )

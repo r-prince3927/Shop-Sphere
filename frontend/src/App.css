@@ -1,0 +1,35 @@
+main {
+
+    padding: 40px;
+
+}
+
+main h1 {
+
+    text-align: center;
+
+    margin-bottom: 10px;
+
+}
+
+main p {
+
+    text-align: center;
+
+    color: gray;
+
+    margin-bottom: 40px;
+
+}
+
+.product-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+}
