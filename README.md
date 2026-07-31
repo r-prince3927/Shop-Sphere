@@ -183,51 +183,51 @@ RAZORPAY_KEY_SECRET=
 
 ---
 
-## 🛍️ Products
+## Products
 
 ![Products](Screenshots/products.png)
 
 ---
 
-## 🔍 Product Details
+## Product Details
 
 ![Product Details](Screenshots/product-details.png)
 
 ---
 
-## ❤️ Wishlist
+## Wishlist
 
 ![Wishlist](Screenshots/screenshotswishlist.png)
 
 ---
 
-## 🛒 Shopping Cart
+## Shopping Cart
 
 ![Shopping Cart](Screenshots/cart.png)
 
 ---
 
-## 💳 Checkout
+## Checkout
 
 ![Checkout](Screenshots/checkout.png)
 
 ---
 
-# 🔐 Admin Panel
+# Admin Panel
 
-## 📊 Dashboard
+## Dashboard
 
 ![Admin Dashboard](Screenshots/admin-dashboard.png)
 
 ---
 
-## 📦 Product Management
+## Product Management
 
 ![Admin Products](Screenshots/admin-products.png)
 
 ---
 
-## 👥 User Management
+## User Management
 
 ![Admin Users](Screenshots/admin-users.png)
 
