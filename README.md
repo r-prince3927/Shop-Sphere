@@ -169,59 +169,65 @@ RAZORPAY_KEY_SECRET=
 - Unit & Integration Testing
 
 ---
-# Screenshots
+# 📸 Screenshots
 
-## Home
+## 🏠 Home
 
-![Home](Screenshots/home-hero.png)
+### Hero Section
 
-![Home](Screenshots/home-products.png)
+![Home Hero](Screenshots/home-hero.png)
+
+### Featured Products
+
+![Home Products](Screenshots/home-products.png)
 
 ---
 
-## Products
+## 🛍️ Products
 
 ![Products](Screenshots/products.png)
 
 ---
 
-## Product Details
+## 🔍 Product Details
 
 ![Product Details](Screenshots/product-details.png)
 
 ---
 
-## Wishlist
+## ❤️ Wishlist
 
-![Wishlist](Screenshots/wishlist.png)
-
----
-
-## Cart
-
-![Cart](Screenshots/cart.png)
+![Wishlist](Screenshots/screenshotswishlist.png)
 
 ---
 
-## Checkout
+## 🛒 Shopping Cart
+
+![Shopping Cart](Screenshots/cart.png)
+
+---
+
+## 💳 Checkout
 
 ![Checkout](Screenshots/checkout.png)
 
 ---
 
-## Admin Dashboard
+# 🔐 Admin Panel
+
+## 📊 Dashboard
 
 ![Admin Dashboard](Screenshots/admin-dashboard.png)
 
 ---
 
-## Admin Products
+## 📦 Product Management
 
 ![Admin Products](Screenshots/admin-products.png)
 
 ---
 
-## Admin Users
+## 👥 User Management
 
 ![Admin Users](Screenshots/admin-users.png)
 
