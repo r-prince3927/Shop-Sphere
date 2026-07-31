@@ -78,11 +78,7 @@ function AdminUsers() {
 
         <div>
 
-            <h1 className="mb-8 text-4xl font-bold">
-
-                User Management
-
-            </h1>
+            User Management
 
             <div className="overflow-hidden rounded-2xl bg-white shadow">
 

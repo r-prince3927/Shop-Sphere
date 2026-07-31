@@ -69,13 +69,6 @@ function AdminDashboard() {
     return (
 
         <div>
-
-            <h1 className="mb-8 text-4xl font-bold">
-
-                Admin Dashboard
-
-            </h1>
-
             <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
 
                 <AdminStatCard
@@ -118,31 +111,31 @@ function AdminDashboard() {
 
                     </h2>
 
-                    <table className="w-full">
+                    <table className="min-w-full text-sm">
 
                         <thead>
 
                             <tr className="border-b">
 
-                                <th className="py-3 text-left">
+                                <th className="px-4 py-3 text-left">
 
                                     ID
 
                                 </th>
 
-                                <th className="py-3 text-left">
+                                <th className="px-4 py-3 text-left">
 
                                     Customer
 
                                 </th>
 
-                                <th className="py-3 text-left">
+                                <th className="px-4 py-3 text-left">
 
                                     Amount
 
                                 </th>
 
-                                <th className="py-3 text-left">
+                                <th className="px-4 py-3 text-left">
 
                                     Status
 
@@ -161,25 +154,25 @@ function AdminDashboard() {
                                     className="border-b"
                                 >
 
-                                    <td className="py-3">
+                                    <td className="px-4 py-3">
 
                                         #{order.id}
 
                                     </td>
 
-                                    <td className="py-3">
+                                    <td className="px-4 py-3">
 
                                         {order.customer}
 
                                     </td>
 
-                                    <td className="py-3">
+                                    <td className="px-4 py-3">
 
                                         ₹{Number(order.amount).toLocaleString("en-IN")}
 
                                     </td>
 
-                                    <td className="py-3">
+                                    <td className="px-4 py-3">
 
                                         {order.status}
 
@@ -209,13 +202,13 @@ function AdminDashboard() {
 
                             <tr className="border-b">
 
-                                <th className="py-3 text-left">
+                                <th className="px-4 py-3 text-left">
 
                                     ID
 
                                 </th>
 
-                                <th className="py-3 text-left">
+                                <th className="px-4 py-3 text-left">
 
                                     Email
 
@@ -234,13 +227,13 @@ function AdminDashboard() {
                                     className="border-b"
                                 >
 
-                                    <td className="py-3">
+                                    <td className="px-4 py-3">
 
                                         {user.id}
 
                                     </td>
 
-                                    <td className="py-3">
+                                    <td className="px-4 py-3">
 
                                         {user.email}
 

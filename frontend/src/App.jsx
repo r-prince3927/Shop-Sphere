@@ -35,7 +35,7 @@ function CustomerLayout({ products }) {
         <div className="min-h-screen flex flex-col bg-gray-100">
             <Navbar />
 
-            <main className="flex-1">
+            <main className="flex-1 bg-gray-50 p-20">
                 <Routes>
                     <Route
                         path="/"

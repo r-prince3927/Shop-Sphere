@@ -128,13 +128,8 @@ function AdminProducts() {
             <div>
 
                 <div className="mb-8 flex items-center justify-between">
-
-                    <h1 className="text-4xl font-bold">
-
+                    
                         Product Management
-
-                    </h1>
-
                     <button
 
                         onClick={() => navigate("/admin/products/add")}

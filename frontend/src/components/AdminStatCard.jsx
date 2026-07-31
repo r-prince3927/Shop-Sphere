@@ -18,7 +18,7 @@ function AdminStatCard({
 
             whileHover={{ scale: 1.03 }}
 
-            className="rounded-2xl bg-white p-6 shadow"
+            className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
 
         >
 
@@ -26,13 +26,13 @@ function AdminStatCard({
 
                 <div>
 
-                    <p className="text-gray-500">
+                    <p className="text-sm font-medium uppercase tracking-wide text-gray-500">
 
                         {title}
 
                     </p>
 
-                    <h2 className="mt-3 text-4xl font-bold">
+                    <h2 className="mt-2 text-3xl font-bold text-gray-900">
 
                         {value}
 

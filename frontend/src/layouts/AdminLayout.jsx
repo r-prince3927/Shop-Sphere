@@ -1,5 +1,4 @@
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
-
 import {
     LayoutDashboard,
     Package,
@@ -10,172 +9,113 @@ import {
 } from "lucide-react";
 
 function AdminLayout() {
-
     const navigate = useNavigate();
 
     function handleLogout() {
-
         localStorage.removeItem("access");
         localStorage.removeItem("refresh");
-
         navigate("/login");
-
     }
 
-    return (
+    const menuItems = [
+        {
+            title: "Dashboard",
+            icon: LayoutDashboard,
+            link: "/admin",
+        },
+        {
+            title: "Products",
+            icon: Package,
+            link: "/admin/products",
+        },
+        {
+            title: "Orders",
+            icon: ShoppingCart,
+            link: "/admin/orders",
+        },
+        {
+            title: "Users",
+            icon: Users,
+            link: "/admin/users",
+        },
+    ];
 
-        <div className="flex min-h-screen bg-gray-100">
+    return (
+        <div className="flex min-h-screen bg-gray-50">
 
             {/* Sidebar */}
 
-            <aside className="w-72 bg-gray-900 text-white shadow-xl">
+            <aside className="w-72 bg-slate-900 text-white flex flex-col">
 
-                <div className="flex items-center gap-3 border-b border-gray-800 p-6">
+                {/* Logo */}
 
-                    <ShoppingBag
+                <div className="border-b border-slate-800 p-6">
 
-                        size={34}
+                    <div className="flex items-center gap-3">
 
-                        className="text-blue-500"
+                        <ShoppingBag
+                            size={34}
+                            className="text-blue-500"
+                        />
 
-                    />
+                        <div>
 
-                    <div>
+                            <h1 className="text-2xl font-bold">
+                                ShopSphere
+                            </h1>
 
-                        <h1 className="text-2xl font-bold">
+                            <p className="text-sm text-slate-400">
+                                Admin Dashboard
+                            </p>
 
-                            ShopSphere
-
-                        </h1>
-
-                        <p className="text-sm text-gray-400">
-
-                            Admin Panel
-
-                        </p>
+                        </div>
 
                     </div>
 
                 </div>
 
-                <nav className="mt-8 flex flex-col gap-2 px-4">
+                {/* Navigation */}
 
-                    <NavLink
+                <nav className="flex-1 p-4 space-y-2">
 
-                        to="/admin"
+                    {menuItems.map((item) => {
 
-                        end
+                        const Icon = item.icon;
 
-                        className={({ isActive }) =>
+                        return (
 
-                            `flex items-center gap-3 rounded-xl px-4 py-3 transition ${
+                            <NavLink
+                                key={item.title}
+                                to={item.link}
+                                end={item.link === "/admin"}
+                                className={({ isActive }) =>
+                                    `flex items-center gap-3 rounded-xl px-4 py-3 font-medium transition-all duration-200 ${
+                                        isActive
+                                            ? "bg-blue-600 text-white shadow-lg"
+                                            : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                                    }`
+                                }
+                            >
 
-                                isActive
+                                <Icon size={20} />
 
-                                    ? "bg-blue-600"
+                                {item.title}
 
-                                    : "hover:bg-gray-800"
+                            </NavLink>
 
-                            }`
+                        );
 
-                        }
-
-                    >
-
-                        <LayoutDashboard size={20} />
-
-                        Dashboard
-
-                    </NavLink>
-
-                    <NavLink
-
-                        to="/admin/products"
-
-                        className={({ isActive }) =>
-
-                            `flex items-center gap-3 rounded-xl px-4 py-3 transition ${
-
-                                isActive
-
-                                    ? "bg-blue-600"
-
-                                    : "hover:bg-gray-800"
-
-                            }`
-
-                        }
-
-                    >
-
-                        <Package size={20} />
-
-                        Products
-
-                    </NavLink>
-
-                    <NavLink
-
-                        to="/admin/orders"
-
-                        className={({ isActive }) =>
-
-                            `flex items-center gap-3 rounded-xl px-4 py-3 transition ${
-
-                                isActive
-
-                                    ? "bg-blue-600"
-
-                                    : "hover:bg-gray-800"
-
-                            }`
-
-                        }
-
-                    >
-
-                        <ShoppingCart size={20} />
-
-                        Orders
-
-                    </NavLink>
-
-                    <NavLink
-
-                        to="/admin/users"
-
-                        className={({ isActive }) =>
-
-                            `flex items-center gap-3 rounded-xl px-4 py-3 transition ${
-
-                                isActive
-
-                                    ? "bg-blue-600"
-
-                                    : "hover:bg-gray-800"
-
-                            }`
-
-                        }
-
-                    >
-
-                        <Users size={20} />
-
-                        Users
-
-                    </NavLink>
+                    })}
 
                 </nav>
 
-                <div className="absolute bottom-8 left-4 right-4">
+                {/* Logout */}
+
+                <div className="p-4 border-t border-slate-800">
 
                     <button
-
                         onClick={handleLogout}
-
                         className="flex w-full items-center justify-center gap-2 rounded-xl bg-red-600 py-3 font-semibold transition hover:bg-red-700"
-
                     >
 
                         <LogOut size={18} />
@@ -188,21 +128,31 @@ function AdminLayout() {
 
             </aside>
 
-            {/* Main Content */}
+            {/* Main */}
 
-            <div className="flex-1">
+            <div className="flex flex-1 flex-col">
 
-                <header className="border-b bg-white px-8 py-6 shadow-sm">
+                {/* Header */}
 
-                    <h1 className="text-3xl font-bold text-gray-900">
+                <header className="flex items-center justify-between border-b bg-white px-10 py-6 shadow-sm">
 
-                        Admin Dashboard
+                    <div>
 
-                    </h1>
+                        <h1 className="text-3xl font-bold text-slate-900">
+                            ShopSphere Admin
+                        </h1>
+
+                        <p className="text-slate-500 mt-1">
+                            Manage products, users and customer orders
+                        </p>
+
+                    </div>
 
                 </header>
 
-                <main className="p-8">
+                {/* Content */}
+
+                <main className="flex-1 p-8 overflow-y-auto">
 
                     <Outlet />
 
@@ -211,9 +161,7 @@ function AdminLayout() {
             </div>
 
         </div>
-
     );
-
 }
 
 export default AdminLayout;
