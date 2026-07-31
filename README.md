@@ -173,7 +173,9 @@ RAZORPAY_KEY_SECRET=
 
 ## Home
 
-![Home](Screenshots/home.png)
+![Home](Screenshots/home-hero.png)
+
+![Home](Screenshots/home-products.png)
 
 ---
 
